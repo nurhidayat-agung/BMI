@@ -214,11 +214,18 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
             },
             child: Container(
               decoration: const BoxDecoration(
-                color: Colors.blue,
+                color: Color(0xffec3c66),
               ),
               height: 60,
               child: const Center(
-                child: Text("Hitung BMI"),
+                child: Text(
+                  "Hitung BMI",
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
               ),
             ),
           ),
