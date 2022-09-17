@@ -6,3 +6,9 @@ TextStyle labelTextStyle = const TextStyle(
   fontSize: 18,
   color: Colors.white,
 );
+
+TextStyle numberTextStyle = const TextStyle(
+  fontSize: 30,
+  fontWeight: FontWeight.bold,
+  color: Colors.white,
+);
