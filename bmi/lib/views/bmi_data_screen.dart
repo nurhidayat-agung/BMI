@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:bmi/constants/constant.dart';
 import 'package:bmi/views/bmi_result_screen.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +19,7 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
   double calculateBMI() {
     double heightInMeter = height / 100;
 
-    double bmi = weight / heightInMeter;
+    double bmi = weight / pow(heightInMeter, 2);
 
     return bmi;
   }
@@ -226,10 +228,13 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
           ),
           GestureDetector(
             onTap: () {
+              print(calculateBMI());
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) {
-                    return const BmiResultScreen();
+                    return BmiResultScreen(
+                      bmi: calculateBMI(),
+                    );
                   },
                 ),
               );

@@ -2,7 +2,9 @@ import 'package:bmi/views/bmi_data_screen.dart';
 import 'package:flutter/material.dart';
 
 class BmiResultScreen extends StatelessWidget {
-  const BmiResultScreen({Key? key}) : super(key: key);
+  const BmiResultScreen({Key? key, required this.bmi}) : super(key: key);
+
+  final double bmi;
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +33,8 @@ class BmiResultScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: const [
-                    Text(
+                  children: [
+                    const Text(
                       "Normal",
                       style: TextStyle(
                         fontSize: 20,
@@ -41,14 +43,14 @@ class BmiResultScreen extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "18.5",
-                      style: TextStyle(
+                      bmi.toStringAsFixed(1),
+                      style: const TextStyle(
                         fontSize: 70,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
                     ),
-                    Text(
+                    const Text(
                       "you BMI score is too low you should eat more",
                       textAlign: TextAlign.center,
                       style: TextStyle(
