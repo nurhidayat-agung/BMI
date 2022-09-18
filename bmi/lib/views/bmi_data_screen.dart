@@ -14,6 +14,14 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
   int weight = 50;
   int age = 20;
 
+  double calculateBMI() {
+    double heightInMeter = height / 100;
+
+    double bmi = weight / heightInMeter;
+
+    return bmi;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
