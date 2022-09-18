@@ -1,3 +1,3 @@
 # BMI
 
-Simple BMI APp with Flutter
+Simple BMI App with Flutter
