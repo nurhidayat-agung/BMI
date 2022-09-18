@@ -31,6 +31,33 @@ class BmiResultScreen extends StatelessWidget {
     return category;
   }
 
+  getHealtRiskDescription(String category) {
+    String desc = "";
+    switch (category) {
+      case underWeightSevere:
+      case underWeightModerate:
+      case underWeightMild:
+        desc = "posible nutritioal deficiency and osteoporosis";
+        break;
+      case normal:
+        desc = "good health ...";
+        break;
+
+      case overweight:
+        desc =
+            "moderate risk of developement heart dissease, high blod pressure";
+        break;
+
+      case obes1:
+      case obes2:
+      case obes3:
+        desc = "high risk of developement heart dissease, high blod pressure";
+        break;
+    }
+
+    return desc;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,10 +102,10 @@ class BmiResultScreen extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                    const Text(
-                      "you BMI score is too low you should eat more",
+                    Text(
+                      getHealtRiskDescription(determineBMICategory(bmi)),
                       textAlign: TextAlign.center,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,

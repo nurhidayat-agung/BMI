@@ -13,11 +13,11 @@ TextStyle numberTextStyle = const TextStyle(
   color: Colors.white,
 );
 
-String underWeightSevere = "underweight (severe thinness)";
-String underWeightModerate = "underweight (moderate thinness)";
-String underWeightMild = "underweight (mild thinness)";
-String normal = "Normal";
-String overweight = "Overweight";
-String obes1 = "Obese (Class I)";
-String obes2 = "Obese (Class II)";
-String obes3 = "Obese (Class III)";
+const String underWeightSevere = "underweight (severe thinness)";
+const String underWeightModerate = "underweight (moderate thinness)";
+const String underWeightMild = "underweight (mild thinness)";
+const String normal = "Normal";
+const String overweight = "Overweight";
+const String obes1 = "Obese (Class I)";
+const String obes2 = "Obese (Class II)";
+const String obes3 = "Obese (Class III)";
