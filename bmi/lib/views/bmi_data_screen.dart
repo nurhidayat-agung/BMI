@@ -15,6 +15,7 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
   int height = 100;
   int weight = 50;
   int age = 20;
+  String? gender;
 
   double calculateBMI() {
     double heightInMeter = height / 100;
@@ -33,20 +34,36 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
         children: [
           Expanded(
             child: Row(
-              children: const [
+              children: [
                 Expanded(
-                  child: BMICard(
-                    child: GenderIconText(
-                      icon: Icons.male,
-                      title: "Male",
+                  child: GestureDetector(
+                    onTap: () {
+                      gender = "male";
+                      setState(() {});
+                    },
+                    child: BMICard(
+                      borderColor:
+                          (gender == "male") ? Colors.white : primaryColor,
+                      child: const GenderIconText(
+                        icon: Icons.male,
+                        title: "Male",
+                      ),
                     ),
                   ),
                 ),
                 Expanded(
-                  child: BMICard(
-                    child: GenderIconText(
-                      icon: Icons.female,
-                      title: 'Female',
+                  child: GestureDetector(
+                    onTap: () {
+                      gender = "female";
+                      setState(() {});
+                    },
+                    child: BMICard(
+                      borderColor:
+                          (gender == "female") ? Colors.white : primaryColor,
+                      child: const GenderIconText(
+                        icon: Icons.female,
+                        title: 'Female',
+                      ),
                     ),
                   ),
                 )
@@ -266,9 +283,11 @@ class BMICard extends StatelessWidget {
   const BMICard({
     Key? key,
     this.child,
+    this.borderColor = primaryColor,
   }) : super(key: key);
 
   final Widget? child;
+  final Color? borderColor;
 
   @override
   Widget build(BuildContext context) {
@@ -276,6 +295,9 @@ class BMICard extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xff272A4e),
         borderRadius: BorderRadius.circular(15),
+        border: Border.all(
+          color: borderColor!,
+        ),
       ),
       margin: const EdgeInsets.all(15),
       child: child,
