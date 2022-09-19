@@ -7,24 +7,24 @@ class BmiResultScreen extends StatelessWidget {
 
   final double bmi;
 
-  determineBMICategory(double _bmi) {
+  determineBMICategory(double bmiScore) {
     String category = "";
 
-    if (_bmi < 16.0) {
+    if (bmiScore < 16.0) {
       category = underWeightSevere;
-    } else if (16.0 <= _bmi && _bmi < 17.0) {
+    } else if (16.0 <= bmiScore && bmiScore < 17.0) {
       category = underWeightModerate;
-    } else if (17.0 <= _bmi && _bmi < 18.5) {
+    } else if (17.0 <= bmiScore && bmiScore < 18.5) {
       category = underWeightMild;
-    } else if (18.5 <= _bmi && _bmi < 25.0) {
+    } else if (18.5 <= bmiScore && bmiScore < 25.0) {
       category = normal;
-    } else if (25.0 <= _bmi && _bmi < 30.0) {
+    } else if (25.0 <= bmiScore && bmiScore < 30.0) {
       category = overweight;
-    } else if (30.0 <= _bmi && _bmi < 35.0) {
+    } else if (30.0 <= bmiScore && bmiScore < 35.0) {
       category = obes1;
-    } else if (35.0 <= _bmi && _bmi < 40.0) {
+    } else if (35.0 <= bmiScore && bmiScore < 40.0) {
       category = obes2;
-    } else if (40.0 <= _bmi) {
+    } else if (40.0 <= bmiScore) {
       category = obes3;
     }
 
@@ -61,7 +61,7 @@ class BmiResultScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Hasil Hitung BMI")),
+      appBar: AppBar(title: const Text("Hasil Hitung BMI")),
       body: Column(
         children: [
           Expanded(
