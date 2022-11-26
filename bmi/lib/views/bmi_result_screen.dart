@@ -64,16 +64,14 @@ class BmiResultScreen extends StatelessWidget {
       appBar: AppBar(title: const Text("Hasil Hitung BMI")),
       body: Column(
         children: [
-          Expanded(
-            child: Container(
-              child: const Center(
-                child: Text(
-                  "Result",
-                  style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
+          const Expanded(
+            child: Center(
+              child: Text(
+                "Result",
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
                 ),
               ),
             ),
