@@ -21,24 +21,24 @@ class BMICalculator {
     return bmi!;
   }
 
-  determineBMICategory(double bmiValue) {
+  determineBMICategory() {
     String category = "";
 
-    if (bmiValue < 16.0) {
+    if (bmi! < 16.0) {
       category = underWeightSevere;
-    } else if (16.0 <= bmiValue && bmiValue < 17.0) {
+    } else if (16.0 <= bmi! && bmi! < 17.0) {
       category = underWeightModerate;
-    } else if (17.0 <= bmiValue && bmiValue < 18.5) {
+    } else if (17.0 <= bmi! && bmi! < 18.5) {
       category = underWeightMild;
-    } else if (18.5 <= bmiValue && bmiValue < 25.0) {
+    } else if (18.5 <= bmi! && bmi! < 25.0) {
       category = normal;
-    } else if (25.0 <= bmiValue && bmiValue < 30.0) {
+    } else if (25.0 <= bmi! && bmi! < 30.0) {
       category = overweight;
-    } else if (30.0 <= bmiValue && bmiValue < 35.0) {
+    } else if (30.0 <= bmi! && bmi! < 35.0) {
       category = obes1;
-    } else if (35.0 <= bmiValue && bmiValue < 40.0) {
+    } else if (35.0 <= bmi! && bmi! < 40.0) {
       category = obes2;
-    } else if (40.0 <= bmiValue) {
+    } else if (40.0 <= bmi!) {
       category = obes3;
     }
 
@@ -47,9 +47,9 @@ class BMICalculator {
     return bmiCategory;
   }
 
-  getHealtRiskDescription(String category) {
+  getHealtRiskDescription() {
     String desc = "";
-    switch (category) {
+    switch (bmiCategory) {
       case underWeightSevere:
       case underWeightModerate:
       case underWeightMild:
