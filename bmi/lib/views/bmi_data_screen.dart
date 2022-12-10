@@ -86,50 +86,56 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
               )
             ],
           ),
-          BMICard(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "Height",
-                  style: labelTextStyle.copyWith(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
+          Column(
+            children: [
+              Text(
+                "Height",
+                style: labelTextStyle.copyWith(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
                 ),
-                const SizedBox(height: 12),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      "$height",
-                      style: const TextStyle(
-                        fontSize: 50,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
+              ),
+              Row(
+                children: [
+                  Expanded(
+                    child: BMICard(
+                      child: Slider(
+                        value: height.toDouble(),
+                        min: 80,
+                        max: 200,
+                        activeColor: Colors.white,
+                        thumbColor: Colors.pink,
+                        onChanged: (value) {
+                          height = value.toInt();
+                          setState(() {});
+                        },
                       ),
                     ),
-                    const SizedBox(height: 12),
-                    Text(
-                      "cm",
-                      style: labelTextStyle,
+                  ),
+                  BMICard(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 15.0, vertical: 15.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(
+                            "$height",
+                            style: labelTextStyle,
+                          ),
+                          const SizedBox(height: 12),
+                          Text(
+                            "cm",
+                            style: labelTextStyle,
+                          ),
+                        ],
+                      ),
                     ),
-                  ],
-                ),
-                Slider(
-                  value: height.toDouble(),
-                  min: 80,
-                  max: 200,
-                  activeColor: Colors.white,
-                  thumbColor: Colors.pink,
-                  onChanged: (value) {
-                    height = value.toInt();
-                    setState(() {});
-                  },
-                ),
-              ],
-            ),
+                  ),
+                ],
+              ),
+            ],
           ),
           Container(
             child: Row(
