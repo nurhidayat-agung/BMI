@@ -1,3 +1,4 @@
+import 'package:bmi/constants/constant.dart';
 import 'package:bmi/helpers/bmi_calculator.dart';
 import 'package:bmi/views/bmi_data_screen.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,12 @@ class BmiResultScreen extends StatelessWidget {
     bmiCalculator.getHealtRiskDescription();
 
     return Scaffold(
-      appBar: AppBar(title: const Text("Hasil Hitung BMI")),
+      appBar: AppBar(
+        title: const Text("Hasil Hitung BMI"),
+        iconTheme: const IconThemeData(
+          color: primaryColor, //change your color here
+        ),
+      ),
       body: Column(
         children: [
           const Expanded(
@@ -29,7 +35,7 @@ class BmiResultScreen extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  color: primaryColor,
                 ),
               ),
             ),
@@ -51,7 +57,7 @@ class BmiResultScreen extends StatelessWidget {
                             style: const TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                              color: primaryColor,
                             ),
                           ),
                           Text(
@@ -59,7 +65,7 @@ class BmiResultScreen extends StatelessWidget {
                             style: const TextStyle(
                               fontSize: 70,
                               fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                              color: primaryColor,
                             ),
                           ),
                           Text(
@@ -68,7 +74,7 @@ class BmiResultScreen extends StatelessWidget {
                             style: const TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                              color: primaryColor,
                             ),
                           ),
                         ],
@@ -85,7 +91,7 @@ class BmiResultScreen extends StatelessWidget {
             },
             child: Container(
               decoration: const BoxDecoration(
-                color: Color(0xffec3c66),
+                color: Color(0xff517df6),
               ),
               height: 60,
               child: const Center(

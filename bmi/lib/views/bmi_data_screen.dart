@@ -46,9 +46,10 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff0A0E21),
+      // backgroundColor: const Color(0xff0A0E21),
       appBar: AppBar(
-        title: const Text("BMI Calculator"),
+        title: const Center(child:  Text("BMI Calculator")),
+        elevation: 0,
       ),
       bottomNavigationBar: GestureDetector(
         onTap: () {
@@ -68,7 +69,7 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
         },
         child: Container(
           decoration: BoxDecoration(
-            color: Color(0xffec3c66),
+            color: Color(0xff517df6),
             borderRadius: BorderRadius.circular(8),
           ),
           height: 60,
@@ -99,7 +100,7 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
                     },
                     child: BMICard(
                       borderColor:
-                          (gender == "male") ? Colors.white : primaryColor,
+                          (gender == "male") ? Color(0xff517df6) : Colors.white,
                       child: Stack(
                         children: [
                           const Center(
@@ -117,8 +118,8 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
                             child: Icon(
                               Icons.check_circle,
                               color: (gender == "male")
-                                  ? Colors.white
-                                  : primaryColor,
+                                  ? const Color(0xff517df6)
+                                  : Colors.white,
                             ),
                           ),
                         ],
@@ -134,7 +135,7 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
                     },
                     child: BMICard(
                       borderColor:
-                          (gender == "female") ? Colors.white : primaryColor,
+                          (gender == "female") ? Color(0xff517df6) : Colors.white,
                       child:  Stack(
                         children: [
                           const Center(
@@ -152,8 +153,8 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
                             child: Icon(
                               Icons.check_circle,
                               color: (gender == "female")
-                                  ? Colors.white
-                                  : primaryColor,
+                                  ? const Color(0xff517df6)
+                                  : Colors.white,
                             ),
                           ),
                         ],
@@ -297,7 +298,7 @@ class BMICard extends StatelessWidget {
   const BMICard({
     Key? key,
     this.child,
-    this.borderColor = primaryColor,
+    this.borderColor = Colors.white,
   }) : super(key: key);
 
   final Widget? child;
@@ -307,7 +308,14 @@ class BMICard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xff272A4e),
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            offset: Offset(-2,2),
+            blurRadius: 20,
+            color: Colors.black.withOpacity(0.2)
+          )
+        ],
         borderRadius: BorderRadius.circular(15),
         border: Border.all(
           color: borderColor!,
@@ -337,7 +345,7 @@ class GenderIconText extends StatelessWidget {
         Icon(
           icon,
           size: 80,
-          color: Colors.white,
+          color: primaryColor,
         ),
         const SizedBox(height: 15),
         Text(

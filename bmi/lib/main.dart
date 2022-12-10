@@ -16,10 +16,11 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primaryColor: primaryColor,
-        scaffoldBackgroundColor: primaryColor,
+        scaffoldBackgroundColor: Colors.white,
         primarySwatch: Colors.blue,
         appBarTheme: const AppBarTheme(
-          backgroundColor: primaryColor,
+          backgroundColor: Colors.white,
+          titleTextStyle: TextStyle(color: primaryColor),
         ),
       ),
       home: const BmiDataScreen(),
