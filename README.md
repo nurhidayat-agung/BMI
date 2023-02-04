@@ -1,12 +1,10 @@
-# BMI 
+# BMI
 
 Simple App BMI Calculator with Flutter
 
-
-<img src="https://github.com/nurhidayat-agung/traditional_bloc/blob/master/ss/data_flow.png" width="250">
-
 <p float="left">
-<img src="https://github.com/nurhidayat-agung/traditional_bloc/blob/master/ss/1.PNG" width="250">
-<img src="https://github.com/nurhidayat-agung/traditional_bloc/blob/master/ss/2.PNG" width="250">
+<img src="https://github.com/nurhidayat-agung/BMI/blob/step-27-change-theme-color/screenshoot/bmi_data_screen.PNG" width="250">
+<img src="https://github.com/nurhidayat-agung/BMI/blob/step-27-change-theme-color/screenshoot/bmi_result_screen.PNG" width="250">
 </p>
+samples, guidance on mobile development, and a full API reference.
 
